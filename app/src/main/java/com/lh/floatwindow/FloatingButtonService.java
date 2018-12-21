@@ -59,14 +59,14 @@ public class FloatingButtonService extends Service {
     }
 
     private void showFloatingWindow() {
-        if (Settings.canDrawOverlays(this)) {
-            button = new Button(getApplicationContext());
-            button.setText("Floating Window");
-            button.setBackgroundColor(Color.BLUE);
-            windowManager.addView(button, layoutParams);
+//        if (Settings.canDrawOverlays(this)) {
+        button = new Button(getApplicationContext());
+        button.setText("Floating Window");
+        button.setBackgroundColor(Color.BLUE);
+        windowManager.addView(button, layoutParams);
 
-            button.setOnTouchListener(new FloatingOnTouchListener());
-        }
+        button.setOnTouchListener(new FloatingOnTouchListener());
+//        }
     }
 
     private class FloatingOnTouchListener implements View.OnTouchListener {

@@ -22,4 +22,10 @@
         android:onClick="startFloatingVideoService"
         android:text="start floating video player" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="startFloatingVideo222"
+        android:text="start video player 222" />
+
 </LinearLayout>

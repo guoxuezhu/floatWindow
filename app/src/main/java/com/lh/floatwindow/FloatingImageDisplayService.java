@@ -76,7 +76,7 @@ public class FloatingImageDisplayService extends Service {
     }
 
     private void showFloatingWindow() {
-        if (Settings.canDrawOverlays(this)) {
+//        if (Settings.canDrawOverlays(this)) {
             LayoutInflater layoutInflater = LayoutInflater.from(this);
             displayView = layoutInflater.inflate(R.layout.image_display, null);
             displayView.setOnTouchListener(new FloatingOnTouchListener());
@@ -85,7 +85,7 @@ public class FloatingImageDisplayService extends Service {
             windowManager.addView(displayView, layoutParams);
 
             changeImageHandler.sendEmptyMessageDelayed(0, 2000);
-        }
+//        }
     }
 
     private Handler.Callback changeImageCallback = new Handler.Callback() {

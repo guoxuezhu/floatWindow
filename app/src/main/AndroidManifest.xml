@@ -25,6 +25,10 @@
         <service android:name=".FloatingButtonService"></service>
         <service android:name=".FloatingImageDisplayService"></service>
         <service android:name=".FloatingVideoService"></service>
+        <service
+            android:name=".FloatingWindowService"
+            android:enabled="true"
+            android:exported="true"></service>
     </application>
 
 
