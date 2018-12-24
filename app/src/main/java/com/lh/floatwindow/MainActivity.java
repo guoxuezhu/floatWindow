@@ -81,4 +81,9 @@ public class MainActivity extends AppCompatActivity {
     public void startFloatingVideo222(View view) {
         startService(new Intent(MainActivity.this, FloatingWindowService.class));
     }
+
+
+    public void testSurfaceView(View view) {
+        startActivity(new Intent(MainActivity.this, SurfaceViewActivity.class));
+    }
 }

@@ -21,19 +21,17 @@
             </intent-filter>
         </activity>
 
-
-        <service android:name=".FloatingButtonService"></service>
-        <service android:name=".FloatingImageDisplayService"></service>
-        <service android:name=".FloatingVideoService"></service>
+        <service android:name=".FloatingButtonService" />
+        <service android:name=".FloatingImageDisplayService" />
+        <service android:name=".FloatingVideoService" />
         <service
             android:name=".FloatingWindowService"
             android:enabled="true"
-            android:exported="true"></service>
+            android:exported="true" />
+
+        <activity
+            android:name=".SurfaceViewActivity"
+            android:configChanges="keyboard|screenSize|orientation"></activity>
     </application>
 
-
 </manifest>
-
-
-
-

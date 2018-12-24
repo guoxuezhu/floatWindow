@@ -28,4 +28,10 @@
         android:onClick="startFloatingVideo222"
         android:text="start video player 222" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="testSurfaceView"
+        android:text="SurfaceView" />
+
 </LinearLayout>
