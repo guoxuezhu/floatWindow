@@ -51,10 +51,17 @@
             android:text="停止" />
     </LinearLayout>
 
-    <SurfaceView
-        android:id="@+id/sv"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+
+        <SurfaceView
+            android:id="@+id/sv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
 
 </LinearLayout>
 

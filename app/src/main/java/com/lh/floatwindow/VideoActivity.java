@@ -6,6 +6,7 @@ import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
@@ -90,7 +91,7 @@ public class VideoActivity extends AppCompatActivity {
 
     };
 
-  
+
 
 
     private SeekBar.OnSeekBarChangeListener change = new SeekBar.OnSeekBarChangeListener() {
@@ -183,7 +184,34 @@ public class VideoActivity extends AppCompatActivity {
                 @Override
                 public void onPrepared(MediaPlayer mp) {
                     Log.i(TAG, "装载完成");
+
+                    // 首先取得video的宽和高
+                    int vWidth = mediaPlayer.getVideoWidth();
+                    int vHeight = mediaPlayer.getVideoHeight();
+
+                    // 该LinearLayout的父容器 android:orientation="vertical" 必须
+                   // LinearLayout linearLayout = (LinearLayout) findViewById(R.id.layoutPlay);
+                    int lw = sv.getWidth();
+                    int lh = sv.getHeight();
+
+                    if (vWidth > lw || vHeight > lh) {
+                        // 如果video的宽或者高超出了当前屏幕的大小，则要进行缩放
+                        float wRatio = (float) vWidth / (float) lw;
+                        float hRatio = (float) vHeight / (float) lh;
+
+                        // 选择大的一个进行缩放
+                        float ratio = Math.max(wRatio, hRatio);
+                        vWidth = (int) Math.ceil((float) vWidth / ratio);
+                        vHeight = (int) Math.ceil((float) vHeight / ratio);
+
+                        // 设置surfaceView的布局参数
+                        LinearLayout.LayoutParams lp= new LinearLayout.LayoutParams(vWidth, vHeight);
+                        lp.gravity = Gravity.CENTER;
+                        sv.setLayoutParams(lp);
+                    }
+                    // 然后开始播放视频
                     mediaPlayer.start();
+
                     // 按照初始位置播放
                     mediaPlayer.seekTo(msec);
                     // 设置进度条的最大进度为视频流的最大播放时长
