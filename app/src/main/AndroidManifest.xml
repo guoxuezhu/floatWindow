@@ -31,7 +31,8 @@
 
         <activity
             android:name=".SurfaceViewActivity"
-            android:configChanges="keyboard|screenSize|orientation"></activity>
+            android:configChanges="keyboard|screenSize|orientation" />
+        <activity android:name=".VideoActivity"></activity>
     </application>
 
 </manifest>

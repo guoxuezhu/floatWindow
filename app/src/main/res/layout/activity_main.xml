@@ -34,4 +34,10 @@
         android:onClick="testSurfaceView"
         android:text="SurfaceView" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="videoActivity"
+        android:text="SurfaceView222" />
+
 </LinearLayout>

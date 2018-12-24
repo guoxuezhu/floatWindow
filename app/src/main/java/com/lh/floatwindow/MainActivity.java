@@ -86,4 +86,8 @@ public class MainActivity extends AppCompatActivity {
     public void testSurfaceView(View view) {
         startActivity(new Intent(MainActivity.this, SurfaceViewActivity.class));
     }
+
+    public void videoActivity(View view) {
+        startActivity(new Intent(MainActivity.this, VideoActivity.class));
+    }
 }
