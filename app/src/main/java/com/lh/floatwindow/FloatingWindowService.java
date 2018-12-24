@@ -16,6 +16,7 @@ import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.MediaController;
 
 import java.io.IOException;
 
@@ -48,9 +49,9 @@ public class FloatingWindowService extends Service {
         layoutParams.flags = WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL | WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE;
         // 设置视频的播放窗口大小
         layoutParams.width = 320;
-        layoutParams.height = 180;
+        layoutParams.height = 580;
         layoutParams.x = 150;
-        layoutParams.y = 300;
+        layoutParams.y = 200;
     }
 
 
@@ -79,8 +80,8 @@ public class FloatingWindowService extends Service {
         // 设置视频播放流类型
         mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
         // 视频资源网址
-//        Uri uri = Uri.parse("http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4");
-        Uri uri = Uri.parse("https://raw.githubusercontent.com/dongzhong/ImageAndVideoStore/master/Bruno%20Mars%20-%20Treasure.mp4");
+        Uri uri = Uri.parse("http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4");
+//        Uri uri = Uri.parse("https://raw.githubusercontent.com/dongzhong/ImageAndVideoStore/master/Bruno%20Mars%20-%20Treasure.mp4");
 
         try {
             // 设置视频播放资源，这里如果前面调用了MediaPlayer.create(contex, R.raw.video),就不用再次调用了
